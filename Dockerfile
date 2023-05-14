@@ -1,12 +1,12 @@
 FROM amazon/aws-cli:2.11.11
 
-RUN yum update && \
-yum -y install unzip && \
-yum -y install tar && \
-yum -y install gzip && \
-yum -y install curl && \
-yum -y install less 
+RUN yum update 
 # && \
+# yum -y install unzip && \
+# yum -y install tar && \
+# yum -y install gzip && \
+# yum -y install curl && \
+# yum -y install less && \
 #curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.6/2023-01-30/bin/linux/amd64/kubectl && \
 #chmod +x ./kubectl && \
 #mv ./kubectl /usr/bin/kubectl && \
