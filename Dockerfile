@@ -1,6 +1,6 @@
 FROM amazon/aws-cli:2.11.11
 
-RUN yum update 
+RUN yum -y update 
 # && \
 # yum -y install unzip && \
 # yum -y install tar && \
