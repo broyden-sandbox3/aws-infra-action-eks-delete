@@ -1,0 +1,23 @@
+name: 'Broyden AWS Infra EKS Pods and Services Delete Handler'
+description: 'Deletes the Pods and Services for an AWS EKS Cluster'
+inputs:
+  aws_access_key_id:  # AWS_ACCESS_KEY_ID
+    description: 'AWS Access Key For the Account that created the EKS Cluster'
+    required: true
+  aws_secret_access_key:  # AWS_SECRET_ACCESS_KEY
+    description: 'AWS Secret Access Key'
+    required: true
+  aws_default_region:  
+    description: 'AWS Default Region'
+    required: true
+  cluster_name:  
+    description: 'Name of EKS Cluster'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.aws_access_key_id }}
+    - ${{ inputs.aws_secret_access_key }}
+    - ${{ inputs.aws_default_region }}
+    - ${{ inputs.cluster_name }}
